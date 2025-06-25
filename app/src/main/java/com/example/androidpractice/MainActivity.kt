@@ -16,25 +16,11 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var gridView: GridView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_grid)
+        setContentView(R.layout.activity_main)
 
-        gridView = findViewById(R.id.grid_view)
-        val items = listOf(1, 2, 3, 4, 56, 7, 8, 8)
 
-        val adapter = ArrayAdapter(
-            this,
-            R.layout.activity_main_linear,
-            R.id.grid_view_item_trial,
-            items
-        )
-
-        gridView.adapter = adapter
-        gridView.setOnItemClickListener { _, _, pos, _ ->
-            Toast.makeText(this, "${items[pos]} is clicked", Toast.LENGTH_SHORT).show()
-        }
     }
 }
